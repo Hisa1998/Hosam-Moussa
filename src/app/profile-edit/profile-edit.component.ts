@@ -1,7 +1,7 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
-import { FormGroup, FormControl, Validators, AbstractControl } from "@angular/forms";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Observable } from 'rxjs';
-import { startWith, map, timeInterval, timeout, timestamp } from 'rxjs/operators';
+import { startWith, map } from 'rxjs/operators';
 
 import { ProfileValidationServices } from "../profile-edit/profile-Validation.Services";
 import { User } from "../shared/user.model";
