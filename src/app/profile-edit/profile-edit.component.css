@@ -1,0 +1,60 @@
+/* basic styling */
+.profile-edit-area
+{
+    background-color:#efeff2 ;
+    padding:20px ;
+}
+.form-style
+{
+    padding : 30px;
+    background-color:#ffffff ;
+    border-radius: 10px;
+}
+.bold
+{
+font-weight: bold;
+margin-left: 10px;
+}
+
+/* buttons styling */
+.my-button{
+    background-color: #0fa572;
+}
+.my-button,.clear-button {   
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    font-size: small;
+    margin: 20px 5px;
+    font-weight: 500;
+}
+.clear-button{ 
+    background-color: #4b67c4;
+}
+.buttons-area{
+    display: flex;
+    justify-content: flex-end;
+}
+/* Not classes */
+label,small{
+    font-size: 13px;
+}
+
+small{
+    color: red;
+    font-weight: 500;
+    font-size: revert;
+}
+span{
+    color: red
+}
+
+/* invalid styling */
+input.ng-invalid.ng-touched
+{
+    border : 1px solid red
+}
+.grayColored
+{
+background-color:gray;
+}

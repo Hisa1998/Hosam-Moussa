@@ -1,0 +1,68 @@
+/* upper Layer */
+.upper-layer{
+    background-color: #f4f4f7;
+    color : black;
+}
+
+/* basic Styling */
+.small-text{
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+h3{
+    display: inline;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.middle-layer{
+    background-color: #26547c;
+    color: white;
+}
+.my-button
+{   
+    padding: 5px 120px;
+    background-color: #0fa572;
+    border: none;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    box-shadow: teal;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    margin: auto;
+    font-size: large;
+}
+.padding-top{
+    padding-top: 60px 
+}
+.padding-middle{
+    padding: 40px 0px
+}
+.middle-paragraph{
+    text-align: center;
+    font-size: x-large;
+    font-weight: 500
+}
+
+/* images Styling */
+.mountin-image {
+    height: 300px;
+}
+.man-image {
+    height: 300px;
+    margin-top: 50px;
+}
+/* for small size screen */
+@media only screen and (max-width: 768px) {
+    .direction{
+        flex-direction: column-reverse;
+    }
+    .display-center{
+        display: flex;
+        justify-content: center;
+    }
+
+  
+   
+}

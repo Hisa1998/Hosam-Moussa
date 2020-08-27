@@ -1,0 +1,10 @@
+<div class="backdrop " (click)="onCancel()">
+    <div class="alert-box">
+      <p>{{message}}</p>
+      <div class="row ">
+          <div class="col-12 buttons-area">
+            <button type="submit" class="btn btn-success my-button"  (click)="onConfirm()">Confirm </button>
+            <button type="button " class="btn btn-primary clear-button " (click)="onCancel()">Cancel </button>
+          </div>
+        </div>
+</div>

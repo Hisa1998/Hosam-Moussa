@@ -1,0 +1,85 @@
+<div class="profile-edit-area">
+<app-alert 
+*ngIf="isClear" 
+message="In case you confirm on clear all user data will be DELETED "
+(Cleared) ="onConfirmClear($event)">
+
+</app-alert>
+  <div class="container">
+    <h5 class="bold"> Profile </h5><br>
+    <form [formGroup]='myForm' (ngSubmit)="onSubmit()">
+      <div class="form-style">
+        <h6 class="bold"> Basic information </h6> <br>
+
+        <div class="form-group">
+          <label for="firstName">First name</label><span>*</span>
+          <input type="text" class="form-control" id="firstName" formControlName="firstName"placeholder="Your first name">
+          <small class="form-text" *ngIf="isRequired('firstName')">{{requiredErrMessage}} </small>
+          <small class="form-text" *ngIf="isInvalidName('firstName')">{{inValidNameErrMessage}} </small>
+          <small class="form-text" *ngIf="isMinlength('firstName')">{{minLeangthErrMessage}} </small>
+          <small class="form-text" *ngIf="isMaxlength('firstName')">{{maxLeangthErrMessage}} </small>
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last name</label><span>*</span>
+          <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Your last name">
+          <small class="form-text" *ngIf="isRequired('lastName')">{{requiredErrMessage}} </small>
+          <small class="form-text" *ngIf="isInvalidName('lastName')">{{inValidNameErrMessage}} </small>
+          <small class="form-text" *ngIf="isMinlength('lastName')">{{minLeangthErrMessage}} </small>
+          <small class="form-text" *ngIf="isMaxlength('lastName')"> {{maxLeangthErrMessage}}</small>
+        </div>
+
+        <div formGroupName='skills'>
+
+          <div class="form-group">
+            <label for="skill1">Skill 1</label><span>*</span>
+            <mat-autocomplete #auto1="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions1 |async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete> 
+            <input type="text"   matInput [matAutocomplete]="auto1" placeholder="Type and select form list" class="form-control" formControlName="skill1">
+            <small class="form-text" *ngIf="isRequired('skills.skill1')">{{requiredErrMessage}}</small>
+            <small class="form-text" *ngIf="isInList('skills.skill1')"> {{notInListErrMessage}}</small>
+          </div>
+
+          <div class="form-group">
+            <label for="skill2">Skill 2</label><span>*</span>
+            <mat-autocomplete #auto2="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions2 |async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete> 
+            <input type="text"   matInput [matAutocomplete]="auto2" class="form-control" id="skill2" formControlName="skill2" placeholder="Type and select form list">
+            <small class="form-text" *ngIf="isRequired('skills.skill2')">{{requiredErrMessage}} </small>
+            <small class="form-text" *ngIf="isInList('skills.skill2')">{{notInListErrMessage}} </small>
+          </div>
+
+          <div class="form-group">
+            <label for="skill3">Skill 3</label><span>*</span>
+            <mat-autocomplete #auto3="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions3 |async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete> 
+            <input type="text"   matInput [matAutocomplete]="auto3" class="form-control" id="skill3" formControlName="skill3" placeholder="Type and select form list">
+            <small class="form-text" *ngIf="isRequired('skills.skill3')">{{requiredErrMessage}} </small>
+            <small class="form-text" *ngIf="isInList('skills.skill3')">{{notInListErrMessage}} </small>
+          </div>
+          <div class="alert alert-success"  style =" text-align: center;"role="alert" *ngIf ="isSuccess">  You saved your data successfully </div>
+          <small class="form-text" *ngIf="myForm.get('skills').errors?.notUnique">{{uniqueSkillErrMessage}}</small>
+        </div>
+
+      </div>
+
+      <div class="row ">
+        <div class="col-12 buttons-area">
+          
+          <button type="button" class="btn btn-primary clear-button " (click)="onClear()">Clear </button>
+          <button  type="submit" class="btn btn-success my-button" [disabled]="myForm.invalid" >Save Profile </button>
+        </div>
+      </div>
+      
+    </form>
+  </div>
+</div>
